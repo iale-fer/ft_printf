@@ -1,28 +1,66 @@
-SRCS 			= 	ft_printf.c \
-					
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ivanalefernandez <ivanalefernandez@stud    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2023/02/13 18:22:05 by ivanalefern       #+#    #+#              #
+#    Updated: 2023/02/13 18:25:12 by ivanalefern      ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-OBJS			= $(SRCS:.c=.o)
 
-CC				= gcc
-RM				= rm -f
-CFLAGS			= -Wall -Wextra -Werror
+#SRCS 			= 	ft_hexa.c 
+#					ft_printf_utilities.c 
+#					ft_putnbr.c 
 
-NAME			= libftprintf.a
+#OBJS			= $(SRCS:.c=.o)
 
-all:			$(NAME)
+#RM				= rm -f
+#CCFLAGS			= -Wall -Wextra -Werror
 
-$(NAME):		$(OBJS)
-				ar -rcs $(NAME) $(OBJS)
+#NAME			= libftprintf.a
+
+#all:			$(NAME)
+
+#$(NAME):		$(OBJS)
+#				ar -rcs $(NAME) $(OBJS)
+
+#clean:
+#				$(RM) $(OBJS)
+
+#fclean:			clean
+#				$(RM) $(NAME)
+
+#re:				fclean all
+
+#.PHONY:			all clean fclean re
+NAME = libftprintf.a
+SRC = ft_printf.c ft_printf_utilities.c ft_hexa.c ft_dec.c
+AR = ar -rcs
+CCFLAGS = -Wall -Werror -Wextra
+OBJS = $(SRC:.c=.o)
+
+
+all: $(NAME)
+
+$(NAME): $(OBJS)
+	@$(AR) $(NAME) $(OBJS)
+	@echo "Se ha compilado perfectamente ✅"
+
+%.o: %.c
+	@gcc $(CCFLAGS) -c -o $@ $<
 
 clean:
-				$(RM) $(OBJS) $(BONUS_OBJS)
+	@rm $(OBJS)
+	@echo "Se ha borrado todo :D"
 
-fclean:			clean
-				$(RM) $(NAME)
 
-re:				fclean all
+fclean: clean
+	@rm -f $(NAME)
 
-bonus:			$(OBJS)
-				ar rcs $(NAME) $(OBJS)
+	
+re: fclean all
 
-.PHONY:			all clean fclean re bonus
+.PHONY: all fclean clean re
