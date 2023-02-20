@@ -6,7 +6,7 @@
 #    By: ivanalefernandez <ivanalefernandez@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 18:22:05 by ivanalefern       #+#    #+#              #
-#    Updated: 2023/02/13 18:25:12 by ivanalefern      ###   ########.fr        #
+#    Updated: 2023/02/15 17:20:11 by ivanalefern      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,14 +47,14 @@ all: $(NAME)
 
 $(NAME): $(OBJS)
 	@$(AR) $(NAME) $(OBJS)
-	@echo "Se ha compilado perfectamente ✅"
+	@echo "Compila2"
 
 %.o: %.c
 	@gcc $(CCFLAGS) -c -o $@ $<
 
 clean:
 	@rm $(OBJS)
-	@echo "Se ha borrado todo :D"
+	@echo "Borrado to2"
 
 
 fclean: clean

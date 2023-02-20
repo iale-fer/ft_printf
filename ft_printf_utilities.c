@@ -6,7 +6,7 @@
 /*   By: ivanalefernandez <ivanalefernandez@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/13 17:53:48 by ivanalefern       #+#    #+#             */
-/*   Updated: 2023/02/13 17:59:45 by ivanalefern      ###   ########.fr       */
+/*   Updated: 2023/02/15 17:41:54 by ivanalefern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	ft_putchar(char c)
 {
 	write(1, &c, 1);
-	return (1);
+	return(1);
 }
 
 int	ft_putstr(char *c)
