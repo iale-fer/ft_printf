@@ -6,61 +6,30 @@
 #    By: ivanalefernandez <ivanalefernandez@stud    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/13 18:22:05 by ivanalefern       #+#    #+#              #
-#    Updated: 2023/02/15 17:20:11 by ivanalefern      ###   ########.fr        #
+#    Updated: 2023/02/20 19:20:31 by ivanalefern      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-#SRCS 			= 	ft_hexa.c 
-#					ft_printf_utilities.c 
-#					ft_putnbr.c 
+SRCS 			= 	ft_hexa.c ft_printf_more.c ft_printf.c ft_dec.c \
 
-#OBJS			= $(SRCS:.c=.o)
+OBJS			= $(SRCS:.c=.o)
 
-#RM				= rm -f
-#CCFLAGS			= -Wall -Wextra -Werror
+CCFLAGS			= -Wall -Wextra -Werror
 
-#NAME			= libftprintf.a
+NAME			= libftprintf.a
 
-#all:			$(NAME)
+all:			$(NAME)
 
-#$(NAME):		$(OBJS)
-#				ar -rcs $(NAME) $(OBJS)
-
-#clean:
-#				$(RM) $(OBJS)
-
-#fclean:			clean
-#				$(RM) $(NAME)
-
-#re:				fclean all
-
-#.PHONY:			all clean fclean re
-NAME = libftprintf.a
-SRC = ft_printf.c ft_printf_utilities.c ft_hexa.c ft_dec.c
-AR = ar -rcs
-CCFLAGS = -Wall -Werror -Wextra
-OBJS = $(SRC:.c=.o)
-
-
-all: $(NAME)
-
-$(NAME): $(OBJS)
-	@$(AR) $(NAME) $(OBJS)
-	@echo "Compila2"
-
-%.o: %.c
-	@gcc $(CCFLAGS) -c -o $@ $<
+$(NAME):		$(OBJS)
+				ar -rcs $(NAME) $(OBJS)
 
 clean:
-	@rm $(OBJS)
-	@echo "Borrado to2"
+				rm -rf $(OBJS)
 
+fclean:			clean
+				rm -f $(NAME)
 
-fclean: clean
-	@rm -f $(NAME)
+re:				fclean all
 
-	
-re: fclean all
-
-.PHONY: all fclean clean re
+.PHONY:			all clean fclean re
