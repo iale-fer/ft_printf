@@ -6,48 +6,33 @@
 /*   By: ivanalefernandez <ivanalefernandez@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 03:57:57 by ivanalefern       #+#    #+#             */
-/*   Updated: 2023/02/13 19:35:43 by ivanalefern      ###   ########.fr       */
+/*   Updated: 2023/03/22 17:51:23 by ivanalefern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putnbr(int n)
+int	ft_putnbr(int num)
 {
-	int	num;
-	int	count;
-	int	neg;
+	int	x;
 
-	num = n;
-	neg = 0;
-	if (num < 0)
+	x = 0;
+	if (num == -2147483648)
 	{
-		ft_putchar('-');
-		num = num * -1;
-		neg = 1;
+		write (1, "-2147483648", 11);
+		return (11);
 	}
-	count = ft_dec_count(num);
-	if (num > 9)
+	else if (num > 9)
 	{
-		ft_putnbr(num / 10);
-		ft_putchar(num % 10 + '0');
+		x += ft_putnbr(num / 10);
+		x += ft_putnbr(num % 10);
+	}
+	else if (num < 0)
+	{
+		x += ft_putchar('-');
+		x += ft_putnbr(-num);
 	}
 	else
-		ft_putchar(num + '0');
-	if (neg == 1)
-		return (count + 1);
-	return (count);
-}
-
-int	ft_dec_count(long num)
-{
-	int	count;
-
-	count = 1;
-	while (num >= 10)
-	{
-		num = num / 10;
-		count++;
-	}
-	return (count);
+		x += ft_putchar(num + '0');
+	return (x);
 }

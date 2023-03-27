@@ -6,12 +6,15 @@
 /*   By: ivanalefernandez <ivanalefernandez@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 12:52:51 by ivanalefern       #+#    #+#             */
-/*   Updated: 2023/02/03 12:55:18 by ivanalefern      ###   ########.fr       */
+/*   Updated: 2023/03/23 22:14:15 by ivanalefern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
+//Esta función convierte un número entero sin signo en su 
+//representación hexadecimal y almacena el resultado en una 
+//cadena de caracteres.
 int	ft_puthexa(size_t num, char *hexa)
 {
 	int	count;
@@ -23,6 +26,7 @@ int	ft_puthexa(size_t num, char *hexa)
 	return (count);
 }
 
+//Cuenta la cantidad de dígitos hexadecimales que contiene un número. 
 int	ft_hexa_count(size_t num)
 {
 	int	count;
@@ -36,6 +40,8 @@ int	ft_hexa_count(size_t num)
 	return (count);
 }
 
+//Devuelve un entero que representa el número de caracteres impresos.
+//imprime el 0x y lo añade a count
 int	ft_putmem(unsigned long long num, char *hexa)
 {
 	size_t	count;

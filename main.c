@@ -6,7 +6,7 @@
 /*   By: ivanalefernandez <ivanalefernandez@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 18:18:48 by ivanalefern       #+#    #+#             */
-/*   Updated: 2023/02/20 19:03:19 by ivanalefern      ###   ########.fr       */
+/*   Updated: 2023/03/21 18:55:51 by ivanalefern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int main(void)
 {
 	char *str;
-	unsidneg char a = 0x64;
+	unsigned char a = 0x64;
 	int	b=0xFAFA;
 
 	ft_printf("Main printf: %c \n", 'A');
