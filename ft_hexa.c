@@ -6,11 +6,12 @@
 /*   By: ivanalefernandez <ivanalefernandez@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 12:52:51 by ivanalefern       #+#    #+#             */
-/*   Updated: 2023/03/27 17:58:59 by ivanalefern      ###   ########.fr       */
+/*   Updated: 2023/03/28 12:33:40 by ivanalefern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
 static int	ft_hexachange(unsigned int long num, char *str)
 {
 	int	x;

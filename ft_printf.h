@@ -6,7 +6,7 @@
 /*   By: ivanalefernandez <ivanalefernandez@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/02 23:58:07 by ivanalefern       #+#    #+#             */
-/*   Updated: 2023/03/27 18:10:43 by ivanalefern      ###   ########.fr       */
+/*   Updated: 2023/03/28 13:56:51 by ivanalefern      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,12 @@
 # include <string.h>
 # include <unistd.h>
 
-int		ft_printf(char const *content, ...);
-int		ft_printall(va_list args, char str);
-int		ft_putchar(char c);
+int	ft_printf(const char *str, ...);
+int	ft_putnbr(int num);
+int	ft_putchar(int c);
+int	ft_putstr(char *str);
 int	ft_pointer(unsigned int long ptr);
-int	ft_hexachange(unsigned int long num, char *str);
+int	ft_unsigned_int(unsigned int long num);
 int	ft_hexadecimal(unsigned int num, char c);
-int		ft_dec_count(long num);
-int		ft_putmem(unsigned long long num, char *hexa);
-int		ft_putstr(char *c);
+
 #endif
